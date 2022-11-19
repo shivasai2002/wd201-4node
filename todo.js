@@ -7,24 +7,24 @@ const todoList = () => {
     all[index].completed = true;
   };
 
-  const overdue = () => {
-    return all.filter(
-      (item) => item.dueDate < new Date().toLocaleDateString("en-CA")
-    );
-  };
-
-  const dueToday = () => {
-    return all.filter(
-      (item) => item.dueDate === new Date().toLocaleDateString("en-CA")
-    );
-  };
-
   const dueLater = () => {
     return all.filter(
       (item) => item.dueDate > new Date().toLocaleDateString("en-CA")
     );
   };
   return { all, add, markAsComplete, overdue, dueToday, dueLater };
+  const dueToday = () => {
+    return all.filter(
+      (item) => item.dueDate === new Date().toLocaleDateString("en-CA")
+    );
+  };
+  
+  const overdue = () => {
+    return all.filter(
+      (item) => item.dueDate < new Date().toLocaleDateString("en-CA")
+    );
+  };
+  
 };
 const toDisplayableList = (list) => {
     // Format the To-Do list here, and return the output string as per the format given above.
